@@ -1,0 +1,6 @@
+﻿TARGET = ts_mempool
+CC = gcc
+CFLAGS = -lm
+
+$(TARGET):
+	$(CC) $(CFLAGS) -o $@ *.c

@@ -1,0 +1,2 @@
+1.thread-safe
+2.reduce ¡°overhead¡± memory
