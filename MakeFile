@@ -1,6 +1,17 @@
-﻿TARGET = ts_mempool
-CC = gcc
-CFLAGS = -lm
+GCC = gcc
+FLAG = -g -lm
+OBJ = test.o cmp.o
 
-$(TARGET):
-	$(CC) $(CFLAGS) -o $@ *.c
+all: test
+
+test: $(OBJ)
+	$(GCC) $(OBJ) -o $@ $(FLAG)
+
+test.o: test.c
+	$(GCC) $< -c -o $@ $(FLAG)
+
+cmp.o: cmp.c cmp.h pool.h defines.h chunk.h
+	$(GCC) $< -c -o $@ $(FLAG)
+
+clean:
+	rm -f test $(OBJ)
